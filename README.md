@@ -45,4 +45,4 @@ claude plugin uninstall usage-meter@usage-meter-market
 
 ## ライセンス・免責
 
-無保証で提供します。公式の Claude Code Mod の仕組み（Anthropic の公開サンプルと同じ形式）で作っていますが、Anthropic 公式製品ではありません。
+MIT ライセンスで、無保証で提供します（LICENSE を参照）。公式の Claude Code Mod の仕組み（Anthropic の公開サンプルと同じ形式）で作っていますが、Anthropic 公式製品ではありません。
