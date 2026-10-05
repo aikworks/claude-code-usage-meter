@@ -1,0 +1,12 @@
+{
+  "name": "usage-meter-market",
+  "description": "Claude Codeの週間・5時間の使用量を常時表示するMod「usage-meter」の配布用マーケットプレイス",
+  "owner": { "name": "aikworks" },
+  "plugins": [
+    {
+      "name": "usage-meter",
+      "source": "./usage-meter",
+      "description": "週間使用量と5時間使用量を、プロンプトの上に常時表示する"
+    }
+  ]
+}
