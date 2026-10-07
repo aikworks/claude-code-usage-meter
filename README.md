@@ -35,6 +35,7 @@ claude plugin install usage-meter@usage-meter-market --scope user
 - Claude Code のデスクトップ版（Code タブ）またはターミナル版。公式資料は Mod に **v2.1.287 以降**を求めています。
 - **Claude の契約プラン**（Pro/Max など）。API キー利用では週間・5時間の数字は出ません。最初の応答が返るまでは「取得待ち」と表示されます。
 - WSL セッションでは Mod が使えません。
+- **動作確認の状況：** Windows（Claude デスクトップ版の Code タブ）は、作者が実画面で確認済みです。**Mac は、利用者から「動いた」との報告があります**（利用者の自己報告で、作者は未確認です）。
 - Mod は「あなたの権限で動くプログラム」です。このMod は使用量を**読んで画面に描くだけ**で、ファイル・通信・外部プロセスには触れません（`claude plugin validate` で確認できます）。ソースは `usage-meter/hooks/usage-meter.mjs` の1ファイルです。
 
 ## 外し方
