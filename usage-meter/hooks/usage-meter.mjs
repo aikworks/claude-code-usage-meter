@@ -7,7 +7,7 @@
 //   使用% が 経過% より小さければ、時間の進みより使用が少ない（余裕あり）。
 // 幅が足りないときは 文脈 → 「リセットまで」を「残り」 の順に削ってバーを確保し、折り返さない。
 // 数字は $.session.usage() の rateLimits。更新は session.start / turn.complete / 60秒ごと。
-// 契約プランでない場合や最初の応答前は rateLimits が空で、「取得待ち」と出す。
+// 契約プランでない場合や最初の応答前（1往復するまで）は rateLimits が空で、「取得待ち」と出す。
 
 const REFRESH_MS = 60_000;
 const WINDOW_MS = { seven_day: 7 * 24 * 3600_000, five_hour: 5 * 3600_000 };
@@ -81,11 +81,15 @@ function width(s) {
 function row(Box, Text, label, kind, avail, main) {
   const limit = limits.find((l) => l.kind === kind);
   if (!limit) {
+    // 1往復するまでは数字が来ない。幅に合わせて、促す文言を短くしていく。
+    const hints = ["取得待ち（何か話しかけて1往復すると表示）", "取得待ち（1往復で表示）", "取得待ち"];
+    const room = avail - width(label);
+    const hint = hints.find((h) => width(h) <= room) ?? hints[hints.length - 1];
     return Box({
       flexDirection: "row",
       children: [
         Text({ bold: main, children: label }),
-        Text({ dimColor: true, children: "取得待ち" }),
+        Text({ dimColor: true, children: hint }),
       ],
     });
   }

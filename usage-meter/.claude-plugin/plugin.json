@@ -1,6 +1,6 @@
 {
   "name": "usage-meter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "週間使用量と5時間使用量を、プロンプトの上に常時表示する（週間を主役にした2段メーター）。",
   "author": { "name": "aikworks" }
 }
